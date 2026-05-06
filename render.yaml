@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: wechat-ai-assistant
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: WECHAT_TOKEN
+        sync: false
+      - key: AI_BASE_URL
+        value: https://api.deepseek.com/v1
+      - key: AI_API_KEY
+        sync: false
+      - key: AI_MODEL
+        value: deepseek-chat
+      - key: AI_TIMEOUT_MS
+        value: 4500
+      - key: SYSTEM_PROMPT
+        value: 你是一个接入微信公众号的AI智能助手，回答要清晰、简洁、友好。
