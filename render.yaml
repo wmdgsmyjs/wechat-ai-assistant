@@ -9,6 +9,10 @@ services:
     envVars:
       - key: WECHAT_TOKEN
         sync: false
+      - key: WECHAT_APP_ID
+        sync: false
+      - key: WECHAT_APP_SECRET
+        sync: false
       - key: AI_BASE_URL
         value: https://api.deepseek.com/v1
       - key: AI_API_KEY
@@ -17,5 +21,15 @@ services:
         value: deepseek-chat
       - key: AI_TIMEOUT_MS
         value: 4500
+      - key: VISION_BASE_URL
+        value: https://api.openai.com/v1
+      - key: VISION_API_KEY
+        sync: false
+      - key: VISION_MODEL
+        value: gpt-4o-mini
+      - key: VISION_TIMEOUT_MS
+        value: 8000
+      - key: MEMORY_TURNS
+        value: 6
       - key: SYSTEM_PROMPT
-        value: 你是一个接入微信公众号的AI智能助手，回答要清晰、简洁、友好。
+        value: 你是公众号的AI助理，语气自然、聪明、清晰，像一个可靠的真人助理。你要优先给出有用、可执行的回答，不要空泛客套。问题不明确时，先用一句话追问关键缺口。
